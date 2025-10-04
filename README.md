@@ -108,28 +108,6 @@ OTP & SMS	Twilio API
 GUI	Tkinter
 File Management	CSV
 Authentication	Flask Session
-🗂️ Folder Structure
-📂 MultiFactorRecognition
-│
-├── 📁 known_faces/
-│   ├── bhushan.jpg
-│   ├── tata.jpg
-│   ├── sadmona.jpg
-│   └── tesla.jpg
-│
-├── app.py                # Flask app with face recognition
-├── otp_app.py            # Flask app for OTP verification
-├── otp_tkinter.py        # Tkinter-based OTP GUI
-├── face_attendance.py    # Attendance recognition script
-├── templates/
-│   ├── login.html
-│   ├── findex.html
-│   ├── index.html
-│   └── otp_verification.html
-│
-├── users.db              # SQLite database (auto-created)
-├── login_data.csv        # Face recognition log
-└── README.md
 
 🔧 Setup Instructions
 🪜 1. Clone the Repository
