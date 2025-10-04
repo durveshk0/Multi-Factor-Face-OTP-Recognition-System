@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>OTP Verification</h1>
+    <form action="findex.html" method="POST">
+        <label for="otp_input">Enter the OTP you received:</label>
+        <input type="text" name="otp_input" id="otp_input" required>
+        <input type="hidden" name="otp" value="123456"> <!-- Replace with your actual OTP -->
+        <input type="hidden" name="otp_generation_time" value="1635638400"> <!-- Replace with actual generation time (Unix timestamp) -->
+        <button type="submit">Validate OTP</button>
+        <p id="error-message"></p>
+        <p id="otp-countdown">
+            OTP expires in: <span id="countdown">60</span> seconds <!-- Replace with actual countdown value -->
+        </p>
+    </form>
+</body>
+</html>
+
+<script>
+        // JavaScript code to handle the countdown timer
+        const countdownElement = document.getElementById('countdown');
+        const otpExpiration = parseInt(countdownElement.textContent);
+
+        function updateCountdown() {
+            const currentTime = parseInt(countdownElement.textContent);
+            if (currentTime > 0) {
+                countdownElement.textContent = currentTime - 1;
+            } else {
+                document.getElementById('otp-countdown').textContent = 'OTP has expired';
+                document.getElementById('error-message').textContent = 'Invalid OTP or OTP has expired. Access denied.';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

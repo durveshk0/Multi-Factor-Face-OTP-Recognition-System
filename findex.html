@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Face Recognition</title>
+</head>
+<body>
+    <h1>Face Recognition Login</h1>
+    <button id="start-btn">Start Face Recognition</button>
+    <div id="video-container" style="display: none;">
+        <img id="video-feed" src="" style="width: 100%;">
+    </div>
+
+    <script>
+        document.getElementById('start-btn').onclick = function() {
+            document.getElementById('video-container').style.display = 'block'; // Show the video container
+            document.getElementById('video-feed').src = "{{ url_for('video_feed') }}"; // Set the video feed source
+            this.style.display = 'none'; // Hide the button after starting
+        };
+    </script>
+</body>
+</html>
